@@ -26,3 +26,4 @@ C4Container
     UpdateRelStyle(orchestrator, model_provider, $offsetX="-45", $offsetY="-10")
     UpdateRelStyle(model_provider, genai, $offsetX="10")
 ```
+[![Architecture Check](https://github.com/YessineT/ai-architecture-nextwork/actions/workflows/architecture.yml/badge.svg)](https://github.com/YessineT/ai-architecture-nextwork/actions/workflows/architecture.yml)
