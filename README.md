@@ -14,12 +14,15 @@ C4Container
         Container(main, "API Container", "FastAPI", "Receives HTTP requests and returns responses")
         Container(orchestrator, "Prompt Orchestrator", "Python module", "Builds prompts from user and system context")
         Container(model_provider, "Model Provider", "Python module", "Calls the LLM and returns generated text")
+        Container(architecture_context, "Architecture Context", "Python module", "Reads the C4 diagram from README.md")
     }
 
     Rel(user, main, "POST /ask", "HTTPS")
     Rel(main, orchestrator, "User question")
     Rel(orchestrator, model_provider, "LLM prompt")
     Rel(model_provider, genai, "generate_content()", "HTTPS")
+    Rel(orchestrator, architecture_context, "Architecture question")
+    Rel(architecture_context, orchestrator, "C4 context")
 
     UpdateRelStyle(user, main, $offsetX="-45", $offsetY="-30")
     UpdateRelStyle(main, orchestrator, $offsetX="-40", $offsetY="-10")
